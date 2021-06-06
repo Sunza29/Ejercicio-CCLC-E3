@@ -1,4 +1,4 @@
-# Creamos la base de datos 
+# Creamos las bases de datos 
 data <- data.frame( control1 = c(85.1, 85.02, 87.08, 85.24, 
                                  85.87, 85.31, 86.44, 85.22,
                                  86.87, 86.31, 87.19, 85.86, 
@@ -14,15 +14,41 @@ data2 <- data.frame( control3 = c(4.47, 4.35, 4.31, 4.33, 4.31,
                                  4.20, 4.27, 4.27, 4.31, 4.32,
                                  4.25, 4.24, 4.21, 4.21, 4.38,
                                  4.11, 4.28, 4.20))
+data3 <- data.frame( calcio   = c(10.0, 10.1, 10.1, 9.9 , 10.0,
+                                  10.1, 10.2, 10.1, 10.0, 10.1,
+                                  10.0, 10.0, 10.0, 10.0, 9.9 ,
+                                  9.9 , 10.1, 10.1, 10.1, 10.1),
+                     enero    = c(10.0, 10.0, 10.1, 10.2, 10.2,
+                                  10.0, 10.1, 9.9 , 10.1, 10.1,
+                                  10.0, 10.1, 10.1, 9.9 , 10.0,
+                                  10.0, 10.1, 10.0, 9.9 , 10.1),
+                     febrero  = c(10.1, 10.1, 10.0, 10.1, 10.1,
+                                  10.0, 10.0, 9.9 , 10.1, 10.1,
+                                  10.0, 10.1, 10.0, 10.0, 9.9 ,
+                                  9.9 , 10.1, 10.1, 10.1, 10.0),
+                     marzo    = c(10.0, 10.2, 10.0, 9.9 , 10.1,
+                                  10.1, 9.9 , 10.0, 10.0, 10.1,
+                                  10.0, 10.0, 10.1, 10.1, 10.3,
+                                  10.2, 10.3, 10.3, 10.2, 10.3),
+                     abril    = c(10.1, 9.9 , 10.0, 10.1, 10.0,
+                                  10.0, 10.0, 10.0, 9.9 , 10.1,
+                                  10.1, 9.9 , 10.0, 9.9 , 9.9 ,
+                                  9.8 , 9.7 , 9.7 , 9.6 , 9.5),
+                     mayo     = c(10.1, 10.1, 10.1, 10.0, 9.9 ,
+                                  10.1, 10.0, 10.0, 10.0, 9.9 ,
+                                  9.6 , 10.0, 9.9 , 10.3, 9.8 ,
+                                  9.7 , 10.4, 9.5 , 10.4, 10.5))
 
 # Optenemos la media, desviación estándar y CV para ambos controles
 mean(data$control1)
 mean(data$control2)
 mean(data2$control3)
+mean(data3$calcio)
 
 sd(data$control1)
 sd(data$control2)
 sd(data2$control3)
+sd(data3$calcio)
 
 coef_var <- function(x, na.rm = FALSE) {
     sd(x, na.rm=na.rm) / mean(x, na.rm=na.rm)
@@ -31,6 +57,7 @@ coef_var <- function(x, na.rm = FALSE) {
 coef_var(x=data$control1, na.rm=T) * 100
 coef_var(x=data$control2, na.rm=T) * 100
 coef_var(x=data2$control3, na.rm=T) * 100
+coef_var(x=data3$calcio, na.rm=T) * 100
 
 # Creamos la gráfica para el control 1
 plot(data$control1,
