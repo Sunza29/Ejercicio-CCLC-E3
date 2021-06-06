@@ -102,14 +102,14 @@ plot(data2$control3,
      pch = 21,
      bg = "black",
      main = "Control 3",
-     axes = FALSE,
-     bty = "7",
+     #axes = FALSE,
+     bty = "n",
      ylim = c(4, 4.6),
      xlim = c(0, 24),
 )
 # Añadimos las etiquetas de los ticks
 axis(1, at = 0:24, labels = 0:24,)
-axis(2, at = 4:4.6, labels = 4:4.6, las = 1)
+#axis(2, at = 4:4.6, labels = 4:4.6, las = 1)
 
 # Agregamos las líneas de desviación para el gráfico
 lines <- {
