@@ -39,17 +39,19 @@ data3 <- data.frame( calcio   = c(10.0, 10.1, 10.1, 9.9 , 10.0,
                                   9.6 , 10.0, 9.9 , 10.3, 9.8 ,
                                   9.7 , 10.4, 9.5 , 10.4, 10.5))
 
-# Optenemos la media, desviación estándar y CV para ambos controles
+# Obtenemos la media
 mean(data$control1)
 mean(data$control2)
 mean(data2$control3)
 mean(data3$calcio)
 
+# Obtenemos desviación estándar
 sd(data$control1)
 sd(data$control2)
 sd(data2$control3)
 sd(data3$calcio)
 
+# Obtenemos CV
 coef_var <- function(x, na.rm = FALSE) {
     sd(x, na.rm=na.rm) / mean(x, na.rm=na.rm)
 }
