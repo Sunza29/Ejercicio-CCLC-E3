@@ -39,7 +39,7 @@ data3 <- data.frame( calcio   = c(10.0, 10.1, 10.1, 9.9 , 10.0,
                                   9.6 , 10.0, 9.9 , 10.3, 9.8 ,
                                   9.7 , 10.4, 9.5 , 10.4, 10.5))
 
-# Obtenemos la media
+# Obtenemos las medias
 mean(data$control1)
 mean(data$control2)
 mean(data2$control3)
@@ -62,6 +62,7 @@ coef_var(x=data2$control3, na.rm=T) * 100
 coef_var(x=data3$calcio, na.rm=T) * 100
 
 # Creamos la gráfica para el control 1
+C1 <- {
 plot(data$control1,
      type="o",
      xlab = "Días",
@@ -91,8 +92,10 @@ lines <- {
     abline(mean(na.omit(data$control1))+3*sd(na.omit(data$control1)),0,col="red")
     abline(mean(na.omit(data$control1))-3*sd(na.omit(data$control1)),0,col="red")
 }
+}
 
 # Creamos el gráfico para el control 2
+C2 <- {
 plot(data$control2,
      type="o",
      xlab = "Días",
@@ -121,9 +124,10 @@ lines <- {
     abline(mean(na.omit(data$control2))+3*sd(na.omit(data$control2)),0,col="red")
     abline(mean(na.omit(data$control2))-3*sd(na.omit(data$control2)),0,col="red")
 }
-
+}
 
 # Creamos el gráfico para el control 3
+C3 <- {
 plot(data2$control3,
      type="o",
      xlab = "Días",
@@ -152,4 +156,164 @@ lines <- {
     abline(mean(na.omit(data2$control3))+3*sd(na.omit(data2$control3)),0,col="red")
     abline(mean(na.omit(data2$control3))-3*sd(na.omit(data2$control3)),0,col="red")
 }
+}
 
+# Creamos el gráfico para enero
+E <- {
+plot(data3$enero,
+     type="o",
+     xlab = "Días",
+     ylab = "Valores", 
+     pch = 21,
+     bg = "black",
+     main = "Enero",
+     #axes = FALSE,
+     bty = "n",
+     ylim = c(9.7, 10.4),
+     xlim = c(0, 21),
+)
+# Añadimos las etiquetas de los ticks
+axis(1, at = 0:21, labels = 0:21,)
+#axis(2, at = 4:4.6, labels = 4:4.6, las = 1)
+
+# Agregamos las líneas de desviación para el gráfico
+lines <- {
+    abline(mean(na.omit(data3$calcio)),0,col="blue")
+    abline(mean(na.omit(data3$calcio))+sd(na.omit(data3$calcio)),0,col="green")
+    abline(mean(na.omit(data3$calcio))-sd(na.omit(data3$calcio)),0,col="green")
+    
+    abline(mean(na.omit(data3$calcio))+2*sd(na.omit(data3$calcio)),0,col="yellow")
+    abline(mean(na.omit(data3$calcio))-2*sd(na.omit(data3$calcio)),0,col="yellow")
+    
+    abline(mean(na.omit(data3$calcio))+3*sd(na.omit(data3$calcio)),0,col="red")
+    abline(mean(na.omit(data3$calcio))-3*sd(na.omit(data3$calcio)),0,col="red")
+}
+}
+
+# Creamos el gráfico para febrero
+F <- {
+plot(data3$febrero,
+     type="o",
+     xlab = "Días",
+     ylab = "Valores", 
+     pch = 21,
+     bg = "black",
+     main = "Febrero",
+     #axes = FALSE,
+     bty = "n",
+     ylim = c(9.7, 10.4),
+     xlim = c(0, 21),
+)
+# Añadimos las etiquetas de los ticks
+axis(1, at = 0:21, labels = 0:21,)
+#axis(2, at = 4:4.6, labels = 4:4.6, las = 1)
+
+# Agregamos las líneas de desviación para el gráfico
+lines <- {
+    abline(mean(na.omit(data3$calcio)),0,col="blue")
+    abline(mean(na.omit(data3$calcio))+sd(na.omit(data3$calcio)),0,col="green")
+    abline(mean(na.omit(data3$calcio))-sd(na.omit(data3$calcio)),0,col="green")
+    
+    abline(mean(na.omit(data3$calcio))+2*sd(na.omit(data3$calcio)),0,col="yellow")
+    abline(mean(na.omit(data3$calcio))-2*sd(na.omit(data3$calcio)),0,col="yellow")
+    
+    abline(mean(na.omit(data3$calcio))+3*sd(na.omit(data3$calcio)),0,col="red")
+    abline(mean(na.omit(data3$calcio))-3*sd(na.omit(data3$calcio)),0,col="red")
+}
+}
+
+# Creamos el gráfico para marzo
+M <- {
+plot(data3$marzo,
+     type="o",
+     xlab = "Días",
+     ylab = "Valores", 
+     pch = 21,
+     bg = "black",
+     main = "Marzo",
+     #axes = FALSE,
+     bty = "n",
+     ylim = c(9.7, 10.4),
+     xlim = c(0, 21),
+)
+# Añadimos las etiquetas de los ticks
+axis(1, at = 0:21, labels = 0:21,)
+#axis(2, at = 4:4.6, labels = 4:4.6, las = 1)
+
+# Agregamos las líneas de desviación para el gráfico
+lines <- {
+    abline(mean(na.omit(data3$calcio)),0,col="blue")
+    abline(mean(na.omit(data3$calcio))+sd(na.omit(data3$calcio)),0,col="green")
+    abline(mean(na.omit(data3$calcio))-sd(na.omit(data3$calcio)),0,col="green")
+    
+    abline(mean(na.omit(data3$calcio))+2*sd(na.omit(data3$calcio)),0,col="yellow")
+    abline(mean(na.omit(data3$calcio))-2*sd(na.omit(data3$calcio)),0,col="yellow")
+    
+    abline(mean(na.omit(data3$calcio))+3*sd(na.omit(data3$calcio)),0,col="red")
+    abline(mean(na.omit(data3$calcio))-3*sd(na.omit(data3$calcio)),0,col="red")
+}
+}
+
+# Creamos el gráfico para abril
+A <- {
+plot(data3$abril,
+     type="o",
+     xlab = "Días",
+     ylab = "Valores", 
+     pch = 21,
+     bg = "black",
+     main = "Abril",
+     #axes = FALSE,
+     bty = "n",
+     ylim = c(9.4, 10.4),
+     xlim = c(0, 21),
+)
+# Añadimos las etiquetas de los ticks
+axis(1, at = 0:21, labels = 0:21,)
+#axis(2, at = 4:4.6, labels = 4:4.6, las = 1)
+
+# Agregamos las líneas de desviación para el gráfico
+lines <- {
+    abline(mean(na.omit(data3$calcio)),0,col="blue")
+    abline(mean(na.omit(data3$calcio))+sd(na.omit(data3$calcio)),0,col="green")
+    abline(mean(na.omit(data3$calcio))-sd(na.omit(data3$calcio)),0,col="green")
+    
+    abline(mean(na.omit(data3$calcio))+2*sd(na.omit(data3$calcio)),0,col="yellow")
+    abline(mean(na.omit(data3$calcio))-2*sd(na.omit(data3$calcio)),0,col="yellow")
+    
+    abline(mean(na.omit(data3$calcio))+3*sd(na.omit(data3$calcio)),0,col="red")
+    abline(mean(na.omit(data3$calcio))-3*sd(na.omit(data3$calcio)),0,col="red")
+}
+}
+
+# Creamos el gráfico para mayo
+M2 <- {
+plot(data3$mayo,
+     type="o",
+     xlab = "Días",
+     ylab = "Valores", 
+     pch = 21,
+     bg = "black",
+     main = "Mayo",
+     #axes = FALSE,
+     bty = "n",
+     ylim = c(9.4, 10.6),
+     xlim = c(0, 21),
+)
+# Añadimos las etiquetas de los ticks
+axis(1, at = 0:21, labels = 0:21,)
+#axis(2, at = 4:4.6, labels = 4:4.6, las = 1)
+
+# Agregamos las líneas de desviación para el gráfico
+lines <- {
+    abline(mean(na.omit(data3$calcio)),0,col="blue")
+    abline(mean(na.omit(data3$calcio))+sd(na.omit(data3$calcio)),0,col="green")
+    abline(mean(na.omit(data3$calcio))-sd(na.omit(data3$calcio)),0,col="green")
+    
+    abline(mean(na.omit(data3$calcio))+2*sd(na.omit(data3$calcio)),0,col="yellow")
+    abline(mean(na.omit(data3$calcio))-2*sd(na.omit(data3$calcio)),0,col="yellow")
+    
+    abline(mean(na.omit(data3$calcio))+3*sd(na.omit(data3$calcio)),0,col="red")
+    abline(mean(na.omit(data3$calcio))-3*sd(na.omit(data3$calcio)),0,col="red")
+}
+}
